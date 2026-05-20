@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Collection – xalution</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .index-hero {
+      background: var(--night);
+      color: var(--white);
+      padding: 80px 40px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .index-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+    }
+    .index-hero img { height: 80px; margin-bottom: 32px; }
+    .index-hero h1 {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 14px;
+    }
+    .index-hero p {
+      font-size: 1rem;
+      color: var(--stone);
+      opacity: 0.75;
+      font-style: italic;
+      font-family: 'Merriweather', serif;
+    }
+    .recipe-grid {
+      max-width: 1020px;
+      margin: 52px auto;
+      padding: 0 24px 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 24px;
+    }
+    .recipe-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: 0 0 4px 4px;
+      padding: 28px 24px 24px;
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 10px rgba(27,33,58,0.07);
+    }
+    .recipe-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(27,33,58,0.13);
+    }
+    .card-flag { font-size: 26px; margin-bottom: 12px; display: block; }
+    .card-country {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+    .card-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--night);
+    }
+    .card-native {
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--rock);
+      margin-bottom: 12px;
+    }
+    .card-desc { font-size: 13px; color: var(--rock); line-height: 1.65; }
+    .card-arrow {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 600px) {
+      .index-hero { padding: 52px 20px; }
+      .recipe-grid { padding: 0 16px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="topbar-logo">
+    <img src="xalution_logo.png" alt="xalution">
+    <span class="topbar-logo-text">Recipe Collection</span>
+  </a>
+  <div class="topbar-nav">
+    <a href="https://www.xalution.de" class="nav-link" target="_blank">xalution.de</a>
+    <a href="#" class="cta-btn" onclick="openModal(); return false;">Contact Us</a>
+  </div>
+</div>
+
+<div class="index-hero">
+  <img src="xalution_logo.png" alt="xalution logo">
+  <h1>Recipe Collection</h1>
+  <p>Traditional Central European &amp; International dishes, curated by the xalution team</p>
+</div>
+
+<div class="recipe-grid">
+
+  <a href="drstkova.html" class="recipe-card">
+    <span class="card-flag">🇨🇿</span>
+    <div class="card-country">Czech Republic</div>
+    <div class="card-title">Czech Tripe Soup</div>
+    <div class="card-native">Dršťková polévka</div>
+    <div class="card-desc">Tender beef tripe in a rich, smoky paprika broth with caraway and marjoram — a true Czech pub classic.</div>
+    <span class="card-arrow">View Recipe →</span>
+  </a>
+
+  <a href="halusky.html" class="recipe-card">
+    <span class="card-flag">🇸🇰</span>
+    <div class="card-country">Slovakia</div>
+    <div class="card-title">Potato Dumplings with Sheep Cheese</div>
+    <div class="card-native">Bryndzové Halušky</div>
+    <div class="card-desc">Slovakia's national dish — soft potato dumplings smothered in tangy bryndza cheese and crispy bacon.</div>
+    <span class="card-arrow">View Recipe →</span>
+  </a>
+
+  <a href="bigos.html" class="recipe-card">
+    <span class="card-flag">🇵🇱</span>
+    <div class="card-country">Poland</div>
+    <div class="card-title">Hunter's Stew</div>
+    <div class="card-native">Bigos</div>
+    <div class="card-desc">Poland's iconic one-pot stew of sauerkraut, cabbage, and mixed meats slow-cooked to deep, smoky perfection.</div>
+    <span class="card-arrow">View Recipe →</span>
+  </a>
+
+  <a href="golabki.html" class="recipe-card">
+    <span class="card-flag">🇵🇱</span>
+    <div class="card-country">Poland</div>
+    <div class="card-title">Stuffed Cabbage Rolls</div>
+    <div class="card-native">Gołąbki</div>
+    <div class="card-desc">Cabbage leaves filled with seasoned pork and rice, slowly braised in a rich tomato sauce.</div>
+    <span class="card-arrow">View Recipe →</span>
+  </a>
+
+  <a href="geschnetzeltes.html" class="recipe-card">
+    <span class="card-flag">🇨🇭</span>
+    <div class="card-country">Switzerland</div>
+    <div class="card-title">Zurich Ragout</div>
+    <div class="card-native">Zürcher Geschnetzeltes</div>
+    <div class="card-desc">Tender veal strips in a silky white wine, cream and mushroom sauce — Zürich's most iconic comfort dish.</div>
+    <span class="card-arrow">View Recipe →</span>
+  </a>
+
+  <a href="fricassee.html" class="recipe-card">
+    <span class="card-flag">🇩🇪</span>
+    <div class="card-country">Germany</div>
+    <div class="card-title">Sweet Chicken Fricassee</div>
+    <div class="card-native">with Fresh Pineapple</div>
+    <div class="card-desc">A fragrant, creamy curry-spiced fricassee with juicy chicken and fresh pineapple, served over fluffy rice.</div>
+    <span class="card-arrow">View Recipe →</span>
+  </a>
+
+</div>
+
+<div class="xalution-banner">
+  <img src="xalution_logo.png" alt="xalution" class="banner-logo">
+  <h2>Looking for a recipe for a <span>successful implementation</span>?</h2>
+  <p>Whether it's ERP, Data &amp; AI, or Power Platform — xalution delivers tailor-made solutions that actually work. Let's talk about your project.</p>
+  <a href="#" class="banner-contact-btn" onclick="openModal(); return false;">Get in Touch</a>
+</div>
+
+<footer>
+  <img src="xalution_logo.png" alt="xalution">
+  <span class="footer-right">© 2026 xalution &nbsp;·&nbsp; <a href="https://www.xalution.de" target="_blank">xalution.de</a></span>
+</footer>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="formArea">
+      <h3>Let's Talk</h3>
+      <p class="modal-sub">Tell us about your project — ERP, Data &amp; AI, Power Platform or anything else. We'll get back to you promptly.</p>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="fname" placeholder="Jane Doe">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="femail" placeholder="jane@company.com">
+      </div>
+      <div class="form-group">
+        <label>Topic</label>
+        <select id="ftopic">
+          <option value="ERP Implementation">ERP Implementation</option>
+          <option value="Data & AI Solutions">Data &amp; AI Solutions</option>
+          <option value="Power Platform">Power Platform</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="fmessage" placeholder="Tell us about your project..."></textarea>
+      </div>
+      <button class="form-submit" onclick="sendMail()">Send Message</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="check">✅</div>
+      <h4>Message sent!</h4>
+      <p>Your email client will open with a pre-filled message. We look forward to hearing from you.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById('contactModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('contactModal').classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('formArea').style.display = 'block';
+  document.getElementById('formSuccess').style.display = 'none';
+}
+document.getElementById('contactModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+function sendMail() {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const topic = document.getElementById('ftopic').value;
+  const message = document.getElementById('fmessage').value.trim();
+  if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
+  const subject = encodeURIComponent('xalution Inquiry: ' + topic);
+  const body = encodeURIComponent(
+    'Name: ' + name + '\nEmail: ' + email + '\nTopic: ' + topic + '\n\n' + message
+  );
+  window.location.href = 'mailto:info@xalution.de?subject=' + subject + '&body=' + body;
+  document.getElementById('formArea').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>
